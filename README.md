@@ -9,6 +9,10 @@
     "query": "This is a sample text for prediction"
 }
 ```
+Options for `content`:
+- title
+- text
+- all (title + text)
 
 ### **Response:**
 ```json
