@@ -1,3 +1,28 @@
+# Project Installation
+access at http://localhost:3000
+## Frontend
+### Install packages
+```
+cd client
+npm install
+```
+### Run
+```
+npm run dev
+```
+
+## Backend
+### Install packages
+```
+cd server
+pip install -r requirements.txt
+```
+### Run
+```
+python server.py
+```
+
+
 # API Documentation
 
 ## **Endpoint:** `/api/predict`
