@@ -56,10 +56,10 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start p-8">
+    <main className="flex min-h-screen flex-col items-center justify-center p-8">
       <h1 className="text-4xl md:text-5xl font-bold mb-8">Real Or Fake News</h1>
-      <div className="w-full max-w-6xl flex flex-col md:flex-row gap-8">
-        <div className="w-full md:w-1/2 space-y-4">
+      <div className={`w-full max-w-6xl flex flex-col md:flex-row gap-8 ${!result ? 'items-center justify-center' : ''}`}>
+        <div className={`w-full ${result ? 'md:w-1/2' : 'max-w-md'} space-y-4`}>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="flex justify-center space-x-2">
               {(['all', 'title', 'text'] as const).map((option) => (
@@ -89,8 +89,8 @@ export default function Home() {
             <p className="mt-4 text-red-500">{error}</p>
           )}
         </div>
-        <div className="w-full md:w-1/2">
-          {result && (
+        {result && (
+          <div className="w-full md:w-1/2">
             <div className="p-4 bg-gray-100 rounded-md w-full">
               <h2 className="text-xl font-semibold mb-2">Result:</h2>
               <p><strong>Query:</strong> {result.query}</p>
@@ -109,8 +109,8 @@ export default function Home() {
                 />
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </main>
   )
